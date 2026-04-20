@@ -1,17 +1,15 @@
 # Jumper
 
-**Instantly move your mouse cursor to any corner or the center of your screen — using just your keyboard.**
+**Instantly move your mouse cursor to the next screen — using just your keyboard.**
 
-No more dragging the mouse across a big monitor. Just press a shortcut and your cursor teleports.
+No more dragging the mouse across monitors. Press one key and your cursor teleports to the next display.
 
-| Shortcut | Where the cursor goes |
-|---|---|
-| Ctrl + Alt + 1 | Top-Left corner |
-| Ctrl + Alt + 2 | Top-Right corner |
-| Ctrl + Alt + 3 | Bottom-Left corner |
-| Ctrl + Alt + 4 | Bottom-Right corner |
-| Ctrl + Alt + 5 | Center of screen |
-| Ctrl + Alt + Q | Quit Jumper |
+| Platform | Shortcut | Action |
+|---|---|---|
+| Mac | Cmd + ` | Jump cursor to next screen |
+| Windows | Ctrl + ` | Jump cursor to next screen |
+
+Cycles left-to-right through all connected displays and wraps back to the first.
 
 ---
 
@@ -52,9 +50,9 @@ The installer will run through five steps. When it asks about Accessibility perm
 
 ### Step 5 — Try it out
 
-Press **Ctrl + Alt + 1**. Your cursor should jump to the top-left corner of your screen. That is it — you are done!
+Press **Cmd + `** (the backtick key, top-left of the keyboard). Your cursor should jump to your next screen. That is it — you are done!
 
-Jumper will start automatically every time you log in. To stop it any time, press **Ctrl + Alt + Q**.
+Jumper will start automatically every time you log in. To stop it, remove it from **System Settings → General → Login Items**.
 
 ---
 
@@ -81,15 +79,11 @@ A blue window will appear and walk through five steps automatically:
 
 If Windows asks *"Do you want to allow this app to make changes?"* click **Yes**.
 
-### Step 4 — A welcome message will appear
+### Step 4 — Try it out
 
-A small pop-up box will show you the available shortcuts. It closes itself after 5 seconds.
+Press **Ctrl + `** (the backtick key, top-left of the keyboard). Your cursor should jump to your next screen. You are done!
 
-### Step 5 — Try it out
-
-Press **Ctrl + Alt + 1**. Your cursor should jump to the top-left corner of your screen. You are done!
-
-Jumper will start automatically every time you log in. To stop it any time, press **Ctrl + Alt + Q**, or right-click the AutoHotkey icon in your taskbar and choose **Exit**.
+Jumper will start automatically every time you log in. To stop it, right-click the Jumper icon in your taskbar and choose **Exit**.
 
 ---
 
@@ -140,7 +134,7 @@ Jumper follows the physical left-to-right arrangement shown in **System Settings
 ### Windows
 
 **Ctrl+\` does nothing**
-AutoHotkey may not be running. Look for the **H** icon near the clock in your taskbar. If it is not there, double-click `jumper.ahk` in `%APPDATA%\jumper\` to start it. If that folder does not exist, run `install.ps1` again.
+AutoHotkey may not be running. Look for the Jumper icon near the clock in your taskbar. If it is not there, double-click `jumper.ahk` in `%APPDATA%\jumper\` to start it. If that folder does not exist, run `install.ps1` again.
 
 **The cursor does not jump**
 Your monitors may be set to **Duplicate / Clone** mode, which makes Windows report them as a single display. Open **Settings → System → Display** and make sure the mode is set to **Extend these displays**.
@@ -164,7 +158,7 @@ After installing, you can run a quick automated test to confirm that display det
 ```
 bash mac/test.sh
 ```
-The test moves the cursor to the centre of each connected display and to the corner of the primary display, then checks that Jumper correctly identifies which screen it is on each time. Results are printed as PASS / FAIL / SKIP.
+The test moves the cursor to the centre of each connected display, then checks that Jumper correctly identifies which screen it is on each time. Results are printed as PASS / FAIL / SKIP.
 
 **Windows:**
 Double-click `windows/test.ahk`. A results window will appear showing PASS / FAIL / SKIP for each check. The cursor will jump around briefly during the test and return to its original position when done.
